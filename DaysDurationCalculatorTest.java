@@ -26,7 +26,18 @@ class DaysDurationCalculatorTest {
 		assertEquals(38,result);
 	}
 	
-	
+	@Test
+	void halfYearTest() {
+		DaysDurationCalculator a = new DaysDurationCalculator();
+		int result = a.cal(1, 1, 7, 2, 2021);
+		assertEquals(182,result);
+	}
+	@Test
+	void fullYearTest() {
+		DaysDurationCalculator a = new DaysDurationCalculator();
+		int result = a.cal(1, 1, 12, 31, 2021);
+		assertEquals(364,result);
+	}
 	@Test
 	void sameDayLeapYearTest() {
 		DaysDurationCalculator a = new DaysDurationCalculator();
@@ -41,6 +52,7 @@ class DaysDurationCalculatorTest {
 		assertEquals(28,result);
 	}
 	
+	
 	@Test
 	void differentMonthLeapYearTest() {
 		DaysDurationCalculator a = new DaysDurationCalculator();
@@ -48,6 +60,19 @@ class DaysDurationCalculatorTest {
 		assertEquals(39,result);
 	}
 	
+	@Test
+	void halfLeapYearTest() {
+		DaysDurationCalculator a = new DaysDurationCalculator();
+		int result = a.cal(1, 1, 7, 2, 2020);
+		assertEquals(183,result);
+	}
+	
+	@Test
+	void fullYearLeapYearTest() {
+		DaysDurationCalculator a = new DaysDurationCalculator();
+		int result = a.cal(1, 1, 12, 31, 2020);
+		assertEquals(365,result);
+	}
 	
 	@Test
 	void bothNoValuesTest() {
